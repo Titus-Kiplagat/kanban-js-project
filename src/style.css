@@ -11,6 +11,7 @@
 
 .foot {
   background-color: black;
+  bottom: 0;
 }
 
 .foot .container {
