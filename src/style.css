@@ -1,3 +1,22 @@
 .custom-color {
   color: #fff;
 }
+
+.card {
+  width: 15rem;
+  border: none;
+}
+
+.image {
+  height: 15rem;
+}
+
+.text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.likes {
+  cursor: pointer;
+}
