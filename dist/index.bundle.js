@@ -135,7 +135,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _renderMovies_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./renderMovies.js */ \"./src/modules/renderMovies.js\");\n\n\nconst fetchData = async () => {\n  await fetch(' https://api.tvmaze.com/shows')\n    .then((response) => response.json())\n    .then((data) => {\n      (0,_renderMovies_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(data);\n    })\n    .catch((error) => {\n      throw new Error(error);\n    });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fetchData);\n\n//# sourceURL=webpack://kanban-js-project/./src/modules/fetchData.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _renderMovies_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./renderMovies.js */ \"./src/modules/renderMovies.js\");\n/* harmony import */ var _assets_heart_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/heart.png */ \"./src/assets/heart.png\");\n/* harmony import */ var _popup_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./popup.js */ \"./src/modules/popup.js\");\n/* eslint-disable no-undef */\n\n\n\n\nconst fetchData = async () => {\n  await fetch(' https://api.tvmaze.com/shows')\n    .then((response) => response.json())\n    .then((data) => {\n      (0,_renderMovies_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(data);\n    });\n\n  const result = response.data;\n  const movies = result.splice(0, 12);\n  movies.forEach((movie) => {\n    const img = document.createElement('img');\n    img.setAttribute('src', _assets_heart_png__WEBPACK_IMPORTED_MODULE_1__);\n    img.className = 'like-icon';\n    const card = document.createElement('div');\n    card.className = 'card';\n    card.innerHTML = `\n      <img src=\"${movie.image.medium}\" alt=\"${movie.name}\" class=\"image\">\n      <h3>${movie.name}</h3>\n      <div class=\"card-body\">\n      <button class=\"commentBtn\">Comment</button>\n      <p>${img.outerHTML}<span class=\"like-count\">0</span>Likes</p>\n      </div>\n      `;\n    fetchData.appenChild(card);\n\n    const likeIcon = card.querySelector('.like-icon');\n    likeIcon.addEventListener('click', () => {\n      likeMovie(movie.id);\n    });\n  });\n  const commentBtn = card.querySelector('.commentBtn');\n  const popContainer = document.querySelector('.popContainer');\n  commentBtn.addEventListener('Click', async (e) => {\n    e.preventDefault();\n    const movieid = movie.id;\n    await (0,_popup_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(movieid);\n    document.body.style.overflow = 'hidden';\n    popContainer.style.display = 'block';\n  })\n    .catch((error) => {\n      throw new Error(error);\n    });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fetchData);\n\n//# sourceURL=webpack://kanban-js-project/./src/modules/fetchData.js?");
 
 /***/ }),
 
@@ -155,7 +155,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _cardMarkup_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cardMarkup.js */ \"./src/modules/cardMarkup.js\");\n/* harmony import */ var _popup_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./popup.js */ \"./src/modules/popup.js\");\n/* eslint-disable no-undef */\n\n\n\nconst renderMovies = (movies) => {\n  const cardsContainer = document.getElementById('cards-container');\n  cardsContainer.innerHTML = '';\n\n  movies.forEach((movie) => {\n    const card = (0,_cardMarkup_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(movie);\n    cardsContainer.innerHTML += card;\n  });\n  const commentBtn = card.querySelector('.commentBtn');\n  const popContainer = document.querySelector('.popContainer');\n  commentBtn.addEventListener('Click', async (e) => {\n    e.preventDefault();\n    const movieid = movie.id;\n    await (0,_popup_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(movieid);\n    document.body.style.overflow = 'hidden';\n    popContainer.style.display = 'block';\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderMovies);\n\n//# sourceURL=webpack://kanban-js-project/./src/modules/renderMovies.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _cardMarkup_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cardMarkup.js */ \"./src/modules/cardMarkup.js\");\n\n\nconst renderMovies = (movies) => {\n  const cardsContainer = document.getElementById('cards-container');\n  cardsContainer.innerHTML = '';\n\n  movies.forEach((movie) => {\n    const card = (0,_cardMarkup_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(movie);\n    cardsContainer.innerHTML += card;\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderMovies);\n\n//# sourceURL=webpack://kanban-js-project/./src/modules/renderMovies.js?");
 
 /***/ }),
 
@@ -166,6 +166,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("module.exports = __webpack_require__.p + \"4d6d4dae8163e75d9fc0.png\";\n\n//# sourceURL=webpack://kanban-js-project/./src/assets/close.png?");
+
+/***/ }),
+
+/***/ "./src/assets/heart.png":
+/*!******************************!*\
+  !*** ./src/assets/heart.png ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"cb59ccb7c8d97ae620f8.png\";\n\n//# sourceURL=webpack://kanban-js-project/./src/assets/heart.png?");
 
 /***/ })
 
