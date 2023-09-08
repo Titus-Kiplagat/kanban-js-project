@@ -1,3 +1,4 @@
+import allItemsCount from './allItemsCount.js';
 import cardMarkup from './cardMarkup.js';
 import fetchAndDisplayLikes from './fetchAndDisplayLikes.js';
 import fetchData from './fetchData.js';
@@ -19,6 +20,7 @@ const renderMovies = async () => {
   });
 
   handleLikeBtnClick();
+  allItemsCount();
 };
 
 export default renderMovies;
