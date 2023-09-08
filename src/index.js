@@ -1,4 +1,6 @@
 import './style.css';
-import fetchData from './modules/fetchData.js';
+import renderMovies from './modules/renderMovies.js';
 
-fetchData();
+document.addEventListener('DOMContentLoaded', () => {
+  renderMovies();
+});
