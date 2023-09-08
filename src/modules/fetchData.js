@@ -1,14 +1,8 @@
-import renderMovies from './renderMovies.js';
+import { moviesURL } from '../config.js';
 
 const fetchData = async () => {
-  await fetch(' https://api.tvmaze.com/shows')
-    .then((response) => response.json())
-    .then((data) => {
-      renderMovies(data);
-    })
-    .catch((error) => {
-      throw new Error(error);
-    });
+  const response = await fetch(moviesURL);
+  return response.json();
 };
 
 export default fetchData;
