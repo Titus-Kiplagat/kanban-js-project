@@ -67,7 +67,7 @@
 
 ## 🔭 Presentation <a name="future-features"></a>
 
-[Presentation link](https://titus-kiplagat.github.io/leaderboard)
+[Presentation link](https://drive.google.com/file/d/1y4U6wFh15LrjYFFx2dTI9PTj8R815pyc/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
