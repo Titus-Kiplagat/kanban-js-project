@@ -1,5 +1,5 @@
-import createPopup from './createPopupMarkup.js';
-
+import { createPopup, createNewComment } from './createPopupMarkup.js';
+import { createComment } from './fetchAndPostComments.js';
 import { detailsAll, popupCloseBtn } from './handlePopupCloseBtn.js';
 
 const displayPopup = async (id) => {
@@ -13,12 +13,12 @@ const displayPopup = async (id) => {
   allpopup.append(createPopup(movieDetail));
   allpopup.style.display = 'flex';
 
-  //   const commentLine = document.querySelector('.commentDisplay');
-  //   const comments = await createComment(id);
-  //   commentLine.append(comments);
+  const commentLine = document.querySelector('.commentDisplay');
+  const comments = await createComment(id);
+  commentLine.append(comments);
 
   popupCloseBtn();
-  // createNewComment();
+  createNewComment();
 };
 
 export default displayPopup;
