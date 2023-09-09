@@ -61,7 +61,7 @@
 
 ## 🔭 Live Demo <a name="future-features"></a>
 
-[ShowBox live demo](https://Titus-Kiplagat.github.io/showmax)
+[ShowBox live demo](https://titus-kiplagat.github.io/kanban-js-project/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
