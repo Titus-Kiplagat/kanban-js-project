@@ -11,10 +11,8 @@
 }
 
 .foot {
-  position: fixed;
+  background-color: black;
   bottom: 0;
-  width: 100%;
-  text-align: center;
 }
 
 .foot .container {

@@ -6,8 +6,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack serve --open",
-    "test": "jest",
-    "deploy": "gh-pages -d dist"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Titus-Kiplagat/kanban-js-project/issues"
   },
-  "homepage": "https://Titus-Kiplagat.github.io/showmax",
+  "homepage": "https://github.com/Titus-Kiplagat/kanban-js-project#readme",
   "devDependencies": {
     "@babel/core": "^7.21.8",
     "@babel/plugin-transform-modules-commonjs": "^7.22.5",
@@ -43,8 +42,5 @@
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
-  },
-  "dependencies": {
-    "gh-pages": "^6.0.0"
   }
 }
