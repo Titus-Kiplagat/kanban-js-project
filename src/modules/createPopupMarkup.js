@@ -1,5 +1,5 @@
 import { createComment, postComment } from './fetchAndPostComments.js';
-// import totalCommentsCount from './commentsCounter.js';
+import totalCommentsCount from './commentsCounter.js';
 
 export const createPopup = ({
   image, name, summary, genres, officialSite, id, rating,
@@ -62,10 +62,10 @@ export const createPopup = ({
 export const createNewComment = async () => {
   const formNewCmnt = document.querySelector('.inputComment');
   const btnSubmit = document.querySelector('.submitComment');
-  //   const commentCounter = totalCommentsCount();
+  const commentCounter = totalCommentsCount();
   const displayAllCmnt = document.querySelector('.commentDisplay');
 
-  document.querySelector('.commentsCount').innerHTML = '';
+  document.querySelector('.commentsCount').innerHTML = commentCounter;
   formNewCmnt.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = formNewCmnt.elements[0];
@@ -79,8 +79,8 @@ export const createNewComment = async () => {
       const allListCmnt = await createComment(btnSubmit.id);
       displayAllCmnt.innerHTML = '';
       displayAllCmnt.append(allListCmnt);
-      // const commentCounter = totalCommentsCount();
-      document.querySelector('.commentsCount').innerHTML = '';
+      const commentCounter = totalCommentsCount();
+      document.querySelector('.commentsCount').innerHTML = commentCounter;
       formNewCmnt.reset();
     }
   });
