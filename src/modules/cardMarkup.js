@@ -33,7 +33,7 @@ const cardMarkup = ({ image, name, id }) => `
                   class="btn btn-sm btn-secondary"
                   >watch</a
                 >
-                <button class="btn btn-sm btn-secondary">comments</button>
+                <button id=${id} class="btn btn-sm btn-secondary btn-comments">comments</button>
               </div>
             </div>
           </div>
